@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>type in dom</title>
+</head>
+<body>
+	<div id="div-1" href="www.baidu.com">
+		<a id="a-1" href="www.baidu.com"></a>
+		<a id="a-2"></a>
+	</div>
+	<button id="button-1" disabled="disabled">button</button>
+	<input id="input-1" type="text" name="input1" readonly="readonly">
+	<script type="text/javascript">
+	var $ = function(id){
+		return document.getElementById(id);
+	}
+	var _in = {
+		hasStyle: 'style' in $('div-1'),  //true
+		hasHref: 'href' in $('a-1'),  //true
+		hasHref2: 'href' in $('div-1'),  //false
+		hasId: 'id' in $('div-1'),  //true
+		hasDisabled: 'disabled' in $('button-1'),  //true
+		hasName: 'name' in $('input-1'),  //true
+		hasReadonly: 'readonly' in $('input-1'),  //false
+		hasType: 'type' in $('input-1')  //true
+	}
+	for(var key in _in){
+		console.log(_in[key]);
+	}
+	</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Location对象</title>
+</head>
+<body>
+	<script>
+		console.log(window.location) /* 输出一个对象 */
+		console.log(window.location.href) //输出一个url https://www.baidu.com/
+		setTimeout(function(){ 
+			//window.location = 'https://www.baidu.com/';   //跳转到 https://www.baidu.com/ 页面
+			//window.location = 'test1.html';   //跳转到同级目录下的  test1.html 页面
+			//window.location = '/test1.html';   //跳转到根目录下的  test1.html 页面
+			//window.location.href = 'https://www.baidu.com/';   //跳转到 https://www.baidu.com/ 页面
+			//window.location.href = 'test1.html';   //跳转到同级目录下的  test1.html 页面
+			//window.location.href = '/test1.html';   //跳转到根目录下的  test1.html 页面
+		 },5000)
+
+		console.log('hash:' + window.location.hash);
+		console.log('host:' + window.location.host);
+		console.log('hostname:' + window.location.hostname);
+		console.log('href:' + window.location.href);
+		console.log('pathname:' + window.location.pathname);
+		console.log('port:' + window.location.port);
+		console.log('protocol:' + window.location.protocol);
+		console.log('search:' + window.location.search);
+
+
+		console.log('-------------------------------')
+		console.log('hashValue:' + window.location.hash.substr(1))
+
+
+		function GetQueryString (n) {
+			// n 为需要获取的参数的名称， 获取单个参数值的方法
+		    var reg = new RegExp("(^|&)"+ n +"=([^&]*)(&|$)");
+		    var r = window.location.search.substr(1).match(reg);
+		    if(r!=null)return  unescape(r[2]); return null;
+		}
+
+		function GetQueryObject () {
+			var search = window.location.search;
+			var searchObj = {};
+			if(!search) return;
+			var searchArry = search.substr(1).split('&');
+			for (var i = searchArry.length - 1; i >= 0; i--) {
+				var index = searchArry[i].indexOf('=');
+				if (index > 0) {
+					searchObj[searchArry[i].substring(0, index)] = searchArry[i].substr(index+1);
+				}
+			}
+			return searchObj;
+		}
+		console.log(GetQueryObject())
+	</script>
+</body>
+</html>

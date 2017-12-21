@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>时间转换函数</title>
+</head>
+<body>
+	<script>
+      function setDate (time) {
+      	var dateString = '';
+      	var y_coefficient = 1000*60*60*24*30*12,
+      		M_coefficient = 1000*60*60*24*30,
+      		d_coefficient = 1000*60*60*24,
+      		h_coefficient = 1000*60*60,
+      		m_coefficient = 1000*60,
+      		s_coefficient = 1000,
+      		y='', M='', d='', h='', m='', s='';
+
+   		if(time/y_coefficient >= 1) {
+   			y = parseInt(time/y_coefficient);
+   			time = time - y*y_coefficient;
+   			return y += '年';
+   		}
+   		if(time/M_coefficient >= 1) {
+   			M = parseInt(time/M_coefficient);
+   			time = time - M*M_coefficient;
+   			return M += '月';
+   		}
+   		if(time/d_coefficient >= 1) {
+   			d = parseInt(time/d_coefficient);
+   			time = time - d*d_coefficient;
+   			return d += '天';
+   		}
+   		if(time/h_coefficient >= 1) {
+   			h = parseInt(time/h_coefficient);
+   			time = time - h*h_coefficient;
+   			return h += '小时';
+   		}
+   		if(time/m_coefficient >= 1) {
+   			m = parseInt(time/m_coefficient);
+   			time = time - m*m_coefficient;
+   			return m += '分钟';
+   		}
+   		if(time/s_coefficient >= 1) {
+   			s = parseInt(time/s_coefficient);
+   			time = time - s*s_coefficient;
+   			return s += '秒';
+   		}
+      }
+      console.log(setDate(10120110110));
+	</script>
+</body>
+</html>

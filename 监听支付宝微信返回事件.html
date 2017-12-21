@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>监听返回事件</title>
+	<style type="text/css" media="screen">
+		div {width: 500px; height: 400px; display: none;}
+		#d1 {background: #aaa; display: block;}
+		#d2 {background: red;}
+		#d3 {background: green;}
+		#d4 {background: orange;}
+		#d5 {background: blue;}
+		#d6 {background: yellow;}
+		#d7 {background: pink;}
+	</style>
+</head>
+<body>
+	<script>
+		function pushHistory() {
+			// body...
+			var state = {  
+	            title: "title",  
+	            url: "#"  
+        	};  
+ 	       window.history.pushState(state, "title", "#");  
+		}
+		//pushHistory();  
+        var bool=false;  
+
+        //该定时器不是必须，是在哪个情况需要禁止默认返回时写
+        setTimeout(function(){  
+            bool=true;  
+        },1500);  
+
+        window.addEventListener("popstate", function(e) {  
+            if(bool) {  
+                //根据自己的需求实现自己的功能  
+                //如果禁止了原来的返回，需要做什么功能
+            }  
+
+            //pushHistory();  
+        }, false);  
+
+        function $(id){
+        	return document.getElementById(id);
+        }
+        function changeDiv(n){
+        	var divs = document.getElementsByTagName('div');
+        	for (var i = divs.length - 1; i >= 0; i--) {
+        		console.log(divs[i])
+        		divs[i].style.display = 'none';
+        	}
+        	$('d' + n).style.display = 'block';
+     	}
+	</script>
+	<div id="d1">
+		<button type="button" onclick="changeDiv(1)">button1</button>
+		<button type="button" onclick="changeDiv(2)">button2</button>
+		<button type="button" onclick="changeDiv(3)">button3</button>
+		<button type="button" onclick="changeDiv(4)">button4</button>
+	</div>
+	<div id="d2">
+		<button type="button" onclick="changeDiv(5)">button5</button>
+	</div>
+	<div id="d3"></div>
+	<div id="d4"></div>
+	<div id="d5">
+		<button type="button" onclick="changeDiv(6)">button6</button>
+		<button type="button" onclick="changeDiv(7)">button7</button>
+	</div>
+	<div id="d6"></div>
+	<div id="d7"></div>
+
+</body>
+</html>

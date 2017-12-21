@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.loading-css {
+			width: 100px;
+		    height: 100px;
+		    position: relative;
+		    margin: 0 auto;
+		    margin-top: 100px;
+		}
+		.loading-css span{
+		    display: inline-block;
+	   		width: 16px;
+		    height: 16px;
+		    border-radius: 50%;
+		    background: lightgreen;
+		    position: absolute;
+		    animation: opcities 1.04s ease infinite;
+		    -webkit-animation: opcities 1.04s ease infinite;
+		}
+		.loading-css span:nth-child(1) {
+		    left: 0;
+		    top: 50%;
+		    margin-top: -8px;
+		    animation-delay: 0.13s;
+		    -webkit-animation-delay: 0.13s;
+		}
+		.loading-css span:nth-child(2) {
+		    left: 14px;
+		    top: 14px;
+		    animation-delay: 0.26s;
+		    -webkit-animation-delay: 0.26s;
+		}
+		.loading-css span:nth-child(3) {
+	        left: 50%;
+		    top: 0;
+		    margin-left: -8px;
+		    animation-delay: 0.39s;
+		    -webkit-animation-delay: 0.39s;
+		}
+		.loading-css span:nth-child(4) {
+			top: 14px;
+		    right: 14px;
+		    animation-delay: 0.52s;
+		    -webkit-animation-delay: 0.52s;
+		}
+		.loading-css span:nth-child(5) {
+			right: 0;
+		    top: 50%;
+		    margin-top: -8px;
+		    animation-delay: 0.65s;
+		    -webkit-animation-delay: 0.65s;
+		}
+		.loading-css span:nth-child(6) {
+		    right: 14px;
+		    bottom: 14px;
+		    animation-delay: 0.78s;
+		    -webkit-animation-delay: 0.78s;
+		}
+		.loading-css span:nth-child(7) {
+	        bottom: 0;
+		    left: 50%;
+		    margin-left: -8px;
+		    animation-delay: 0.91s;
+		    -webkit-animation-delay: 0.91s;
+		}
+		.loading-css span:nth-child(8) {
+		    bottom: 14px;
+		    left: 14px;
+		    animation-delay: 1.04s;
+		    -webkit-animation-delay: 1.04s;
+		    text-align: center;
+		}
+		@keyframes opcities {
+			0% {
+			    opacity: 1;
+			}
+
+			100% {
+			    opacity: 0.2;
+			}
+		}
+		@-webkit-keyframes opcities {
+			0% {
+			    opacity: 1;
+			}
+
+			100% {
+			    opacity: 0.2;
+			}
+		}
+	</style>	
+</head>
+<body>
+	<div class="loading-css">
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+	
+</body>
+</html>

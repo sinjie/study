@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div id="d1">
+		click me!
+	</div>
+	<script>
+		$('#d1').on('click', {msg: 'You just clicked me'}, function(e){
+			console.log(e.data.msg)
+		})
+	</script>
+</body>
+</html>

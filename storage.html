@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input onclick="setStorage()" type="button" name="" value="btn" />
+	<script>
+		console.log(sessionStorage.getItem('name'))
+		console.log(localStorage.getItem('name'))
+		function setStorage() {
+			var a = 'name', b = 'This is sessionStorage', c = sessionStorage.getItem("name") || 'It has not "name" in session of now!';
+			sessionStorage.setItem(a, b);
+			localStorage.setItem(a, b);
+			console.log(c);
+		}
+
+
+		
+	</script>	
+</body>
+</html>

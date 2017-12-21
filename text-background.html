@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>字体背景图</title>
+	<style type="text/css" media="screen">
+		div {
+			font-size: 15rem;
+			text-align: center;
+			color: transparent;
+			background: url('http://pic34.nipic.com/20131102/14386175_175034285000_2.jpg');
+			background-size: 100%;
+			-webkit-background-clip: text;
+			animation: background-move 3s linear infinite alternate;
+		}
+		div small {
+			font-size: 3rem;
+		}
+		@keyframes background-move {
+			from {
+				background-position-y: 0;
+			}
+			to {
+				background-position-y: 100%;
+			}
+		}
+
+	</style>
+	<script>
+        document.getElementsByTagName('html')[0].style.fontSize = window.innerWidth/100 + 'px';
+	</script>
+</head>
+<body>
+	<div>
+		<span>字体背景图</span><br/>
+		<small>动态背景图片展示，设置不同的背景图片可展示不同的效果。</small>
+	</div>
+</body>
+</html>
