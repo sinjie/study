@@ -1,2 +1,2 @@
 # vue-study
-vue项目的初次git
+一些方法原理学习demo或文档
